@@ -1,0 +1,7 @@
+.env
+__pycache__
+test
+.vscode
+*.db
+local.tests.py
+.DS_Store
