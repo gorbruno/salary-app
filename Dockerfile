@@ -9,4 +9,4 @@ RUN pip install poetry --root-user-action=ignore && \
 
 COPY . ./
 
-CMD ["poetry", "run", "main.py"]
+CMD ["poetry", "run", "python", "main.py"]
