@@ -1,0 +1,15 @@
+stages:
+  - test
+
+test:
+  stage: test
+  image: python:3.13
+  variables:
+    TEST: "true"
+    PYTHONUNBUFFERED: "1"
+  before_script:
+    - pip install poetry
+    - poetry config virtualenvs.create false
+    - poetry install
+  script:
+    - poetry run pytest tests

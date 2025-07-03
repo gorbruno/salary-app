@@ -2,7 +2,7 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 from app.auth import create_access_token, get_current_user
 from app.utils import get_id_by_credentials
-from tests.utils import create_database_with_test_data
+from app.utils import create_database_with_mockup_data
 from app.settings import settings
 from datetime import timedelta
 from app.models import UserDTO, UserIdDTO, UserPromotionDTO, UserSalaryDTO
@@ -29,5 +29,6 @@ def get_promotion_date(current_user: UserDTO = Depends(get_current_user)) -> Use
     return UserPromotionDTO.model_validate(current_user)
 
 if __name__ == "__main__":
-    asyncio.run(create_database_with_test_data("tests/users.csv"))
+    if settings.CREATE_TABLE:
+        asyncio.run(create_database_with_mockup_data("tests/test_users.csv"))
     uvicorn.run("main:app", host=settings.SERVICE_HOST, port=settings.SERVICE_PORT, reload=True)

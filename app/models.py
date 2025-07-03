@@ -32,8 +32,8 @@ class UserDTO(CustomBaseModel):
     promotion_date: datetime.date
 
 class UserIdDTO(CustomBaseModel):
-    username: str
     id: int
+    username: str
 
 class UserSalaryDTO(CustomBaseModel):
     username: str

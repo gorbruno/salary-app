@@ -8,6 +8,7 @@ class AppSettings(BaseSettings):
     SECRET_TOKEN: str
     ENCRYPTION_ALGORITHM: str
     TIME_EXPIRES: int
+    CREATE_TABLE: bool
     model_config = {
         "extra": "ignore"
     }
