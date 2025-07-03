@@ -10,6 +10,6 @@ test:
   before_script:
     - pip install poetry
     - poetry config virtualenvs.create false
-    - poetry install
+    - poetry install --no-root
   script:
     - poetry run pytest tests
