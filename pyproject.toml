@@ -1,6 +1,6 @@
 [project]
 name = "salary-app"
-version = "0.1.0"
+version = "1.0.0"
 description = "Educational project for getting user salary and promotion information with required verification."
 authors = [
     {name = "Alexey Gorbunov",email = "a.gorbunov4221@gmail.com"}
