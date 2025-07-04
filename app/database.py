@@ -1,10 +1,16 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from app.settings import settings
 from app.models import Base
+import os
 
-DATABASE = (
-    f"sqlite+aiosqlite:///{settings.DB_NAME}.db"
-)
+if os.getenv("TEST"):
+    DATABASE = (
+        "sqlite+aiosqlite:///:memory:"
+    )
+else:
+    DATABASE = (
+        f"sqlite+aiosqlite:///{settings.DB_NAME}.db"
+    )
 
 engine = create_async_engine(DATABASE, echo=False)
 

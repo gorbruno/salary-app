@@ -1,0 +1,47 @@
+stages:
+  - test
+
+utils:
+  stage: test
+  image: python:3.13
+  variables:
+    TEST: "true"
+    PYTHONUNBUFFERED: "1"
+    PYTHONPATH: "${CI_PROJECT_DIR}"
+  before_script:
+    - cp .env.example .env
+    - pip install poetry
+    - poetry config virtualenvs.create false
+    - poetry install --no-root
+  script:
+    - poetry run pytest tests/test_utils.py
+
+database:
+  stage: test
+  image: python:3.13
+  variables:
+    TEST: "true"
+    PYTHONUNBUFFERED: "1"
+    PYTHONPATH: "${CI_PROJECT_DIR}"
+  before_script:
+    - cp .env.example .env
+    - pip install poetry
+    - poetry config virtualenvs.create false
+    - poetry install --no-root
+  script:
+    - poetry run pytest tests/test_database.py
+
+auth:
+  stage: test
+  image: python:3.13
+  variables:
+    TEST: "true"
+    PYTHONUNBUFFERED: "1"
+    PYTHONPATH: "${CI_PROJECT_DIR}"
+  before_script:
+    - cp .env.example .env
+    - pip install poetry
+    - poetry config virtualenvs.create false
+    - poetry install --no-root
+  script:
+    - poetry run pytest tests/test_auth.py

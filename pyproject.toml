@@ -1,6 +1,6 @@
 [project]
 name = "salary-app"
-version = "0.1.0"
+version = "1.0.0"
 description = "Educational project for getting user salary and promotion information with required verification."
 authors = [
     {name = "Alexey Gorbunov",email = "a.gorbunov4221@gmail.com"}
@@ -15,7 +15,9 @@ dependencies = [
     "python-jose (>=3.5.0,<4.0.0)",
     "python-multipart (>=0.0.20,<0.0.21)",
     "sqlalchemy (>=2.0.41,<3.0.0)",
-    "aiosqlite (>=0.21.0,<0.22.0)"
+    "aiosqlite (>=0.21.0,<0.22.0)",
+    "pytest (>=8.4.1,<9.0.0)",
+    "pytest-asyncio (>=1.0.0,<2.0.0)"
 ]
 
 

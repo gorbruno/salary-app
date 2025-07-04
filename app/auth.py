@@ -11,7 +11,6 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/token")
 
 # jwt работает только со словарём
 def create_access_token(data: UserIdDTO, expires: datetime.timedelta | None = None):
-    print("data", data)
     to_encode = {"id": data.id}
     expire = datetime.datetime.now(datetime.timezone.utc) + (expires or datetime.timedelta(minutes=15))
     to_encode.update({"exp": expire}) #type: ignore
