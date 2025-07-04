@@ -22,7 +22,7 @@ cp .env.example .env
 * SERVICE_PORT — порт сервиса
 * SECRET_TOKEN — секретный токен для jwt
 * ENCRYPTION_ALGORITHM — алгоритм шифрования
-> сейчас работает только HS256
+> Сейчас работает только HS256
 * TIME_EXPIRES — время жизни токена в минутах
 * CREATE_TABLE — создать БД из тестовой таблицы
 
@@ -39,11 +39,12 @@ docker run --rm -p 8000:8000 salary-app
 ### 5. Теперь можно отправлять запросы
 
 #### Получить токен
+Хост и порт могут отличаться в зависимости от настроек
 ```
 curl -X POST http://localhost:8000/auth/token  -d "username=<username>&password=<password>"  -H "Content-Type: application/x-www-form-urlencoded"
 ```
 
-Например:
+Пример пользователя:
 
 > username=aagorbunov
 
